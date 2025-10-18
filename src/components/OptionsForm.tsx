@@ -4,9 +4,10 @@ import type { PasswordOptions } from "../types/PasswordOptions";
 interface OptionsFormProps{
     options: PasswordOptions;
     setOptions: React.Dispatch<React.SetStateAction<PasswordOptions>>;
+    onGenerate: () => void;
 }
 
-export default function OptionsForm({options, setOptions}: OptionsFormProps){
+export default function OptionsForm({options, setOptions, onGenerate}: OptionsFormProps){
 
     const handleLengthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOptions({
@@ -23,7 +24,7 @@ export default function OptionsForm({options, setOptions}: OptionsFormProps){
     };
 
     const handleGenerateClick = () => {
-        
+        onGenerate();
     }
 
     return (
@@ -39,7 +40,7 @@ export default function OptionsForm({options, setOptions}: OptionsFormProps){
                         max={32}
                         value={options.length}
                         onChange={handleLengthChange}
-                        className = "w-full cursor-pointer accent-black h-2 bg-slate-300 rounded-lg appearance-none "
+                        className = "w-full cursor-pointer accent-slate-900 h-2 bg-slate-300 rounded-lg appearance-none "
                         />
                 </div>
             </div>
@@ -75,7 +76,7 @@ export default function OptionsForm({options, setOptions}: OptionsFormProps){
                 <label htmlFor="includeSymbols" className="text-xl">Include symbols</label>
             </div>
             <button
-                className="m-auto mt-3 rounded-xl bg-slate-400 w-24 h-10 text-base hover:bg-slate-600"
+                className="m-auto mt-3 rounded-xl bg-blue-500 w-24 h-10 text-base hover:bg-blue-700 transition-colors ease-in-out duration-300"
                 onClick = {handleGenerateClick}
             >
                 Generate
