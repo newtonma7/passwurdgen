@@ -76,10 +76,10 @@ export default function OptionsForm({options, setOptions, onGenerate}: OptionsFo
                 <label htmlFor="includeSymbols" className="text-xl">Include symbols</label>
             </div>
             <button
-                className="m-auto mt-3 rounded-xl bg-blue-500 w-24 h-10 text-base hover:bg-blue-700 transition-colors ease-in-out duration-300"
+                className="m-auto mt-3 rounded-xl bg-blue-500 w-24 h-10 text-base hover:bg-blue-700 transition-colors ease-in-out duration-300 font-semibold"
                 onClick = {handleGenerateClick}
             >
-                Generate
+            Generate
             </button>
         </div>
     )
